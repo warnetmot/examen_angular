@@ -13,7 +13,7 @@ class ProductController extends Controller
     }
     public function create(){
         return view('products.create');
-    }
+    } 
     public function store(Request $request){
         $request->validate([
             'name' =>'required|string|max:50',
