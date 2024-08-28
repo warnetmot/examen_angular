@@ -5,7 +5,7 @@
 @section('content_header')
     <h1>Crear Nuevo Empleado</h1>
 @stop
-
+ 
 @section('content')
 <div class="container">
     <div class="card">
@@ -20,9 +20,7 @@
                         <div class="form-group">
                             <label for="first_name">Nombre</label>
                             <input type="text" name="first_name" id="first_name" class="form-control form-control-sm" required>
-                            @error('first_name')
-                                <small class="text-danger">{{ $message }}</small>
-                            @enderror
+                           
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -35,15 +33,14 @@
                         </div>
                     </div>
                 </div>
-
+        <div class="row">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="ci">Cédula de Identidad</label>
-                    <input type="text" name="ci" id="ci" class="form-control form-control-sm" required>
-                    @error('ci')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                    <input type="text" name="ci" id="ci" class="form-control form-control-sm" required> 
                 </div>
-
+            </div>            
+            <div class="col-md-6">
                 <div class="form-group">
                     <label for="email">Correo Electrónico</label>
                     <input type="email" name="email" id="email" class="form-control form-control-sm" required>
@@ -51,6 +48,10 @@
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
+            </div>
+        </div>
+        
+
 
                 <div class="row">
                     <div class="col-md-6">
@@ -103,57 +104,68 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="position_id">Posición</label>
-                    <select name="position_id" id="position_id" class="form-control form-control-sm" required>
-                        @foreach ($positions as $position)
-                            <option value="{{ $position->id }}">{{ $position->job }}</option>
-                        @endforeach
-                    </select>
-                    @error('position_id')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="department_id">Departamento</label>
-                    <select name="department_id" id="department_id" class="form-control form-control-sm" required>
-                        @foreach ($departments as $department)
-                            <option value="{{ $department->id }}">{{ $department->name }}</option>
-                        @endforeach
-                    </select>
-                    @error('department_id')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="hire_date">Fecha de Contratación</label>
-                    <input type="date" name="hire_date" id="hire_date" class="form-control form-control-sm" required>
-                    @error('hire_date')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
                     <label for="salary">Salario</label>
                     <input type="text" name="salary" id="salary" class="form-control form-control-sm" required>
                     @error('salary')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="position_id">Posición</label>
+                            <select name="position_id" id="position_id" class="form-control form-control-sm" required>
+                                @foreach ($positions as $position)
+                                    <option value="{{ $position->id }}">{{ $position->job }}</option>
+                                @endforeach
+                            </select>
+                            @error('position_id')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="gender">Género</label>
-                    <select name="gender" id="gender" class="form-control form-control-sm" required>
-                        <option value="masculino">Masculino</option>
-                        <option value="femenino">Femenino</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                    @error('gender')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="department_id">Departamento</label>
+                            <select name="department_id" id="department_id" class="form-control form-control-sm" required>
+                                @foreach ($departments as $department)
+                                    <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                @endforeach
+                            </select>
+                            @error('department_id')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="gender">Género</label>
+                            <select name="gender" id="gender" class="form-control form-control-sm" required>
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            @error('gender')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="hire_date">Fecha de Contratación</label>
+                            <input type="date" name="hire_date" id="hire_date" class="form-control form-control-sm" required>
+                            @error('hire_date')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                </div>	
+                 
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form>
         </div>

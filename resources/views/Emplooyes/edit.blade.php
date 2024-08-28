@@ -38,36 +38,46 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="ci">Cédula de Identidad</label>
-                    <input type="text" name="ci" id="ci" class="form-control form-control-sm" value="{{ old('ci', $emplooye->ci) }}" required>
-                    @error('ci')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ci">Cédula de Identidad</label>
+                            <input type="text" name="ci" id="ci" class="form-control form-control-sm" value="{{ old('ci', $emplooye->ci) }}" required>
+                            @error('ci')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" name="email" id="email" class="form-control form-control-sm" value="{{ old('email', $emplooye->email) }}" required>
+                            @error('email')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" name="email" id="email" class="form-control form-control-sm" value="{{ old('email', $emplooye->email) }}" required>
-                    @error('email')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Teléfono</label>
-                    <input type="text" name="phone" id="phone" class="form-control form-control-sm" value="{{ old('phone', $emplooye->phone) }}">
-                    @error('phone')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="address">Dirección</label>
-                    <input type="text" name="address" id="address" class="form-control form-control-sm" value="{{ old('address', $emplooye->address) }}">
-                    @error('address')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="text" name="phone" id="phone" class="form-control form-control-sm" value="{{ old('phone', $emplooye->phone) }}">
+                            @error('phone')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <input type="text" name="address" id="address" class="form-control form-control-sm" value="{{ old('address', $emplooye->address) }}">
+                            @error('address')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -91,48 +101,58 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="position_id">Posición</label>
-                    <select name="position_id" id="position_id" class="form-control form-control-sm" required>
-                        @foreach ($positions as $position)
-                            <option value="{{ $position->id }}" {{ old('position_id', $emplooye->position_id) == $position->id ? 'selected' : '' }}>
-                                {{ $position->job }}
-                            </option>
-                        @endforeach
-                    </select>
-                    @error('position_id')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="position_id">Posición</label>
+                            <select name="position_id" id="position_id" class="form-control form-control-sm" required>
+                                @foreach ($positions as $position)
+                                    <option value="{{ $position->id }}" {{ old('position_id', $emplooye->position_id) == $position->id ? 'selected' : '' }}>
+                                        {{ $position->job }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('position_id')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="department_id">Departamento</label>
+                            <select name="department_id" id="department_id" class="form-control form-control-sm" required>
+                                @foreach ($departments as $department)
+                                    <option value="{{ $department->id }}" {{ old('department_id', $emplooye->department_id) == $department->id ? 'selected' : '' }}>
+                                        {{ $department->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('department_id')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="department_id">Departamento</label>
-                    <select name="department_id" id="department_id" class="form-control form-control-sm" required>
-                        @foreach ($departments as $department)
-                            <option value="{{ $department->id }}" {{ old('department_id', $emplooye->department_id) == $department->id ? 'selected' : '' }}>
-                                {{ $department->name }}
-                            </option>
-                        @endforeach
-                    </select>
-                    @error('department_id')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="hire_date">Fecha de Contratación</label>
-                    <input type="date" name="hire_date" id="hire_date" class="form-control form-control-sm" value="{{ old('hire_date', $emplooye->hire_date) }}" required>
-                    @error('hire_date')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                </div>
-
-                <div class="form-group">
-                    <label for="salary">Salario</label>
-                    <input type="text" name="salary" id="salary" class="form-control form-control-sm" value="{{ old('salary', $emplooye->salary) }}" required>
-                    @error('salary')
-                        <small class="text-danger">{{ $message }}</small>
-                    @enderror
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="hire_date">Fecha de Contratación</label>
+                            <input type="date" name="hire_date" id="hire_date" class="form-control form-control-sm" value="{{ old('hire_date', $emplooye->hire_date) }}" required>
+                            @error('hire_date')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="salary">Salario</label>
+                            <input type="text" name="salary" id="salary" class="form-control form-control-sm" value="{{ old('salary', $emplooye->salary) }}" required>
+                            @error('salary')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-group">
