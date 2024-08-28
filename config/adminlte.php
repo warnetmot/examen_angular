@@ -359,6 +359,21 @@ return [
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
+            'text' => 'Departamentos',
+            'url' => 'Departments',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Cargos',
+            'url' => 'Positions',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Empleados',
+            'url' => 'Emplooyes',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
             'text' => 'multilevel',
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
