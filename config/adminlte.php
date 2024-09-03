@@ -328,89 +328,29 @@ return [
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
+        
+       
         [
-            'text' => 'Productos',
-            'url' => 'products',
+            'text' => 'Estudiantes',
+            'url' => 'Estudiantes',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Vehiculos',
-            'url' => 'Vehiculos',
+            'text' => 'Cursos',
+            'url' => 'Cursos',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text' => 'Proovedores',
-            'url' => 'Suppliers',
+            'text' => 'Inscripciones',
+            'url' => 'Inscripciones',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text' => 'Inventario',
-            'url' => 'Inventories',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Clientes',
-            'url' => 'Clientss',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Citas',
-            'url' => 'Appointments',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Departamentos',
-            'url' => 'Departments',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Cargos',
-            'url' => 'Positions',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'Empleados',
-            'url' => 'Emplooyes',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
+
+        
+        
+                  
+            
+        
         ['header' => 'labels'],
         [
             'text' => 'important',
